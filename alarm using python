@@ -1,0 +1,22 @@
+import time
+import winsound
+
+
+def alarm():
+    frequency = 2500  
+    duration = 1000  
+    for i in range(3): 
+        winsound.Beep(frequency, duration)
+        time.sleep(1) 
+
+
+alarm_time = input('Enter the time of the alarm to be set (in HH:MM:SS format): ')
+
+
+while True:
+    current_time = time.strftime('%H:%M:%S')  
+    if current_time == alarm_time:
+        print('Alarm activated at', alarm_time)
+        alarm()
+        break
+    time.sleep(1)  
